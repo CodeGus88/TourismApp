@@ -1,7 +1,7 @@
 package com.codegus.codegus.models.user;
 
 import com.codegus.codegus.models.BaseModel;
-import com.codegus.codegus.models.services.Service;
+import com.codegus.codegus.models.assistance.Assistance;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -26,6 +26,6 @@ public class User extends BaseModel<UUID> {
     private String  password;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private List<Service> services;
+    private List<Assistance> assistances;
 
 }

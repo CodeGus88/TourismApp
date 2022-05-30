@@ -1,7 +1,7 @@
 package com.codegus.codegus.models.phones;
 
 import com.codegus.codegus.models.BaseModel;
-import com.codegus.codegus.models.services.Service;
+import com.codegus.codegus.models.assistance.Assistance;
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -14,8 +14,8 @@ public class Phone extends BaseModel<UUID> {
     private String phone;
 
     @ManyToOne
-    @JoinColumn(name = "service_id")
-    private Service service;
+    @JoinColumn(name = "assistance_id")
+    private Assistance assistance;
 
     public String getPhone() {
         return phone;
@@ -25,4 +25,11 @@ public class Phone extends BaseModel<UUID> {
         this.phone = phone;
     }
 
+    public Assistance getService() {
+        return assistance;
+    }
+
+    public void setService(Assistance assistance) {
+        this.assistance = assistance;
+    }
 }

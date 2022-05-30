@@ -1,6 +1,8 @@
 package com.codegus.codegus.models.address;
 
 import com.codegus.codegus.models.BaseModel;
+import com.codegus.codegus.models.restaurant.Restaurant;
+import com.codegus.codegus.models.assistance.Assistance;
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -29,6 +31,14 @@ public class Address extends BaseModel<UUID> {
 
     @Column(name = "longitude")
     private Double longitude;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "service_id", unique = true)
+    private Assistance assistance;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurant_id", unique = true)
+    private Restaurant restaurant;
 
     public String getCountry() {
         return country;
@@ -84,5 +94,21 @@ public class Address extends BaseModel<UUID> {
 
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
+    }
+
+    public Assistance getAssistance() {
+        return assistance;
+    }
+
+    public void setAssistance(Assistance assistance) {
+        this.assistance = assistance;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
     }
 }

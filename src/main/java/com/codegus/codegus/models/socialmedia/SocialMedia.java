@@ -1,8 +1,7 @@
 package com.codegus.codegus.models.socialmedia;
 
 import com.codegus.codegus.models.BaseModel;
-import com.codegus.codegus.models.services.Service;
-import com.codegus.codegus.models.user.User;
+import com.codegus.codegus.models.assistance.Assistance;
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -19,7 +18,7 @@ public class SocialMedia extends BaseModel<UUID> {
 
     @ManyToOne
     @JoinColumn(name = "service_id")
-    private Service service;
+    private Assistance assistance;
 
     public String getName() {
         return name;

@@ -1,7 +1,6 @@
 package com.codegus.codegus.models.touristplace;
 
-import com.codegus.codegus.models.BaseModelCommon;
-import com.codegus.codegus.models.address.Address;
+import com.codegus.codegus.models.BaseCommonModel;
 import com.codegus.codegus.models.vote.Vote;
 
 import javax.persistence.*;
@@ -10,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "tourist_places")
-public class TouristPlace extends BaseModelCommon<UUID> {
+public class TouristPlace extends BaseCommonModel<UUID> {
 
     @Column(name = "category")
     private String category;
@@ -20,10 +19,6 @@ public class TouristPlace extends BaseModelCommon<UUID> {
 
     @OneToMany(mappedBy = "touristPlace", fetch = FetchType.LAZY)
     private List<Vote> votes;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", unique = true)
-    private Address address;
 
     public String getCategory() {
         return category;
@@ -49,11 +44,4 @@ public class TouristPlace extends BaseModelCommon<UUID> {
         this.votes = votes;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 }

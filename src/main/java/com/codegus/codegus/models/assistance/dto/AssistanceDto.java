@@ -1,39 +1,90 @@
-package com.codegus.codegus.models.services;
+package com.codegus.codegus.models.assistance.dto;
 
-import com.codegus.codegus.models.BaseModelCommon;
+import com.codegus.codegus.models.address.dto.AddressDto;
 import com.codegus.codegus.models.phones.Phone;
 import com.codegus.codegus.models.socialmedia.SocialMedia;
 import com.codegus.codegus.models.user.User;
 
-import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
 
-@Entity
-@Table(name = "services")
-public class Service extends BaseModelCommon<UUID> {
+public class AssistanceDto {
 
-    @Column(name = "category")
-    private String category; // restaurante, balneario, supermercado, etc, agencia de viaje, etc
+    private UUID id;
 
-    @Column(name = "email")
+    private String name;
+
+    private String imageUrl;
+
+    private boolean isPublic;
+
+    private String description;
+
+    private String keyWords;
+
+    private String category;
+
     private String email;
 
-    @Column(name = "website")
     private String website;
 
-    @Column(name = "service_opening_information")
     private String serviceOpeningInformation;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "service")
     private List<Phone> phones;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "service")
     private List<SocialMedia> socialMedia;
+
+    private AddressDto address;
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public boolean isPublic() {
+        return isPublic;
+    }
+
+    public void setPublic(boolean aPublic) {
+        isPublic = aPublic;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getKeyWords() {
+        return keyWords;
+    }
+
+    public void setKeyWords(String keyWords) {
+        this.keyWords = keyWords;
+    }
 
     public String getCategory() {
         return category;
@@ -89,5 +140,13 @@ public class Service extends BaseModelCommon<UUID> {
 
     public void setSocialMedia(List<SocialMedia> socialMedia) {
         this.socialMedia = socialMedia;
+    }
+
+    public AddressDto getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressDto address) {
+        this.address = address;
     }
 }

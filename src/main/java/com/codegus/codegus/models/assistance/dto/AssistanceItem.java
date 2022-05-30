@@ -1,32 +1,38 @@
-package com.codegus.codegus.models;
+package com.codegus.codegus.models.assistance.dto;
 
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import com.codegus.codegus.models.address.dto.AddressDto;
+import com.codegus.codegus.models.phones.Phone;
+import com.codegus.codegus.models.socialmedia.SocialMedia;
+import com.codegus.codegus.models.user.User;
 
-import javax.persistence.Column;
-import javax.persistence.EntityListeners;
-import javax.persistence.MappedSuperclass;
-import java.time.LocalDateTime;
+import java.util.List;
+import java.util.UUID;
 
-@MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
-public abstract class BaseModelCommon<ID> extends BaseModel<ID>{
+public class AssistanceItem {
 
-    @Column(name = "name")
+    private UUID id;
+
     private String name;
 
-    @Column(name = "image_url")
     private String imageUrl;
 
-    @Column(name = "is_public")
     private boolean isPublic;
 
-    @Column(name = "description")
     private String description;
 
-    @Column(name = "key_words")
     private String keyWords;
+
+    private String category;
+
+    private AddressDto address;
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -68,4 +74,19 @@ public abstract class BaseModelCommon<ID> extends BaseModel<ID>{
         this.keyWords = keyWords;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public AddressDto getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressDto address) {
+        this.address = address;
+    }
 }
