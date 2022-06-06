@@ -1,4 +1,4 @@
-package com.codegus.codegus.repositories.turistplace;
+package com.codegus.codegus.repositories.impl;
 
 
 import com.codegus.codegus.models.touristplace.TouristPlace;
@@ -9,5 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface TouristPlaceRepository extends BaseRepository<TouristPlace, UUID> {
-//    Implementar métodos de TuristPlaceRepository
+//    Métodos de TuristPlaceRepository
 }

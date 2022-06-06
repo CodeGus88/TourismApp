@@ -14,10 +14,10 @@ import java.util.UUID;
 public class Vote extends BaseModel<UUID> {
 
     @ManyToOne
-    @JoinColumn(name = "forignkey_id")
+    @JoinColumn(name = "tourist_place_id")
     private TouristPlace touristPlace;
 
-    @OneToOne
+    @OneToOne()
     @JoinColumn(name = "user_id")
     private User user;
 
