@@ -24,9 +24,6 @@ public abstract class BaseCommonModel<ID> extends BaseModel<ID>{
     @Column(name = "key_words")
     private String keyWords;
 
-    @OneToOne
-    private Address address;
-
     public String getName() {
         return name;
     }
@@ -67,11 +64,4 @@ public abstract class BaseCommonModel<ID> extends BaseModel<ID>{
         this.keyWords = keyWords;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 }

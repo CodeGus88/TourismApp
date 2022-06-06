@@ -1,6 +1,9 @@
 package com.codegus.codegus.models.restaurant.dto;
 
 import com.codegus.codegus.models.address.dto.AddressDto;
+import com.codegus.codegus.models.rating.RestaurantRating;
+
+import java.util.List;
 import java.util.UUID;
 
 public class RestaurantItem {
@@ -21,6 +24,7 @@ public class RestaurantItem {
 
     private AddressDto address;
 
+    private List<RestaurantRating> rating;
 
     public UUID getId() {
         return id;
@@ -84,5 +88,13 @@ public class RestaurantItem {
 
     public void setAddress(AddressDto address) {
         this.address = address;
+    }
+
+    public List<RestaurantRating> getRating() {
+        return rating;
+    }
+
+    public void setRating(List<RestaurantRating> rating) {
+        this.rating = rating;
     }
 }

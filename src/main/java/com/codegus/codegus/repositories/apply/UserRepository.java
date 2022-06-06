@@ -1,2 +1,14 @@
-package com.codegus.codegus.repositories.apply;public class UserRepository {
+package com.codegus.codegus.repositories.apply;
+
+import com.codegus.codegus.models.user.User;
+import com.codegus.codegus.repositories.BaseRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
+
+@Repository
+public interface UserRepository extends BaseRepository<User, UUID> {
+
+
+
 }

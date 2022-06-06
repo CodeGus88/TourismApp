@@ -6,7 +6,7 @@ public class PhoneRequest {
 
     private String phone;
 
-    private UUID serviceId;
+    private UUID foreignKey;
 
     public String getPhone() {
         return phone;
@@ -16,11 +16,12 @@ public class PhoneRequest {
         this.phone = phone;
     }
 
-    public UUID getServiceId() {
-        return serviceId;
+    public UUID getForeignKey() {
+        return foreignKey;
     }
 
-    public void setServiceId(UUID serviceId) {
-        this.serviceId = serviceId;
+    public void setForeignKey(UUID foreignKey) {
+        this.foreignKey = foreignKey;
     }
+
 }

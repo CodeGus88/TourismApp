@@ -9,7 +9,7 @@ public class PhoneDto {
 
     private String phone;
 
-    private UUID serviceId;
+    private UUID foreignKey;
 
     private LocalDateTime createdAt;
 
@@ -31,12 +31,12 @@ public class PhoneDto {
         this.phone = phone;
     }
 
-    public UUID getServiceId() {
-        return serviceId;
+    public UUID getForeignKey() {
+        return foreignKey;
     }
 
-    public void setServiceId(UUID serviceId) {
-        this.serviceId = serviceId;
+    public void setForeignKey(UUID foreignKey) {
+        this.foreignKey = foreignKey;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -54,4 +54,5 @@ public class PhoneDto {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
+
 }

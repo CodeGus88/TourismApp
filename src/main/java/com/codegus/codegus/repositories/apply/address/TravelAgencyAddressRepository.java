@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface TravelAgencyRepository extends BaseRepository<TravelAgencyAddress, UUID> {
+public interface TravelAgencyAddressRepository extends BaseRepository<TravelAgencyAddress, UUID> {
 
 
 

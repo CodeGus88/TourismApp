@@ -1,9 +1,7 @@
-package com.codegus.codegus.models.travelagence.dtos;
+package com.codegus.codegus.models.travelagency.dtos;
 
 import com.codegus.codegus.models.address.dto.AddressDto;
-import com.codegus.codegus.models.phones.Phone;
 import com.codegus.codegus.models.phones.TravelAgencyPhone;
-import com.codegus.codegus.models.socialmedia.SocialMedia;
 import com.codegus.codegus.models.socialmedia.TravelAgencySocialMedia;
 import com.codegus.codegus.models.user.User;
 

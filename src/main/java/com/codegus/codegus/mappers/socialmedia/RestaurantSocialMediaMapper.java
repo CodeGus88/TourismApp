@@ -1,27 +1,32 @@
 package com.codegus.codegus.mappers.socialmedia;
 
 import com.codegus.codegus.mappers.BaseMapper;
-import com.codegus.codegus.models.socialmedia.SocialMedia;
+import com.codegus.codegus.models.socialmedia.RestaurantSocialMedia;
 import com.codegus.codegus.models.socialmedia.dto.SocialMediaDto;
 import com.codegus.codegus.models.socialmedia.dto.SocialMediaItem;
 import com.codegus.codegus.models.socialmedia.dto.SocialMediaRequest;
+import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
 import java.util.List;
 
-public interface SocialMediaMapper extends BaseMapper<SocialMedia, SocialMediaItem, SocialMediaDto, SocialMediaRequest> {
-
-    @Override
-    SocialMedia requestToEntity(SocialMediaRequest request);
-
-    @Override
-    SocialMediaDto entityToDto(SocialMedia entity);
+@Mapper(componentModel = "spring")
+public interface RestaurantSocialMediaMapper extends BaseMapper<RestaurantSocialMedia, SocialMediaItem, SocialMediaDto, SocialMediaRequest> {
 
     @Override
     @Mappings({
-            @Mapping(source = "serviceId", target = "service.id")
+            @Mapping(source = "foreignKey", target = "restaurant.id")
     })
-    List<SocialMediaItem> entityListToItemList(List<SocialMedia> entityList);
+    RestaurantSocialMedia requestToEntity(SocialMediaRequest request);
+
+    @Override
+    @Mappings({
+            @Mapping(source = "restaurant.id", target = "foreignKey")
+    })
+    SocialMediaDto entityToDto(RestaurantSocialMedia entity);
+
+    @Override
+    List<SocialMediaItem> entityListToItemList(List<RestaurantSocialMedia> entityList);
 
 }

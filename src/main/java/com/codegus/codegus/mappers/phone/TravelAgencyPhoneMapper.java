@@ -1,8 +1,7 @@
 package com.codegus.codegus.mappers.phone;
 
 import com.codegus.codegus.mappers.BaseMapper;
-import com.codegus.codegus.models.phones.Phone;
-import com.codegus.codegus.models.phones.RestaurantPhone;
+import com.codegus.codegus.models.phones.TravelAgencyPhone;
 import com.codegus.codegus.models.phones.dto.PhoneDto;
 import com.codegus.codegus.models.phones.dto.PhoneItem;
 import com.codegus.codegus.models.phones.dto.PhoneRequest;
@@ -13,21 +12,21 @@ import org.mapstruct.Mappings;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface RestaurantPhoneMapper extends BaseMapper<RestaurantPhone, PhoneItem, PhoneDto, PhoneRequest> {
+public interface TravelAgencyPhoneMapper extends BaseMapper<TravelAgencyPhone, PhoneItem, PhoneDto, PhoneRequest> {
 
     @Override
     @Mappings({
-            @Mapping(source = "foreignKey", target = "restaurant.id")
+            @Mapping(source = "foreignKey", target = "travelAgency.id")
     })
-    RestaurantPhone requestToEntity(PhoneRequest request);
+    TravelAgencyPhone requestToEntity(PhoneRequest request);
 
     @Override
     @Mappings({
-            @Mapping(source = "restaurant.id", target = "foreignKey")
+            @Mapping(source = "travelAgency.id", target = "foreignKey")
     })
-    PhoneDto entityToDto(RestaurantPhone entity);
+    PhoneDto entityToDto(TravelAgencyPhone entity);
 
     @Override
-    List<PhoneItem> entityListToItemList(List<RestaurantPhone> entityList);
+    List<PhoneItem> entityListToItemList(List<TravelAgencyPhone> entityList);
 
 }

@@ -1,7 +1,7 @@
 package com.codegus.codegus.models.touristplace.dto;
 
 import com.codegus.codegus.models.address.dto.AddressItem;
-import com.codegus.codegus.models.vote.Vote;
+import com.codegus.codegus.models.like.Like;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -19,7 +19,7 @@ public class TouristPlaceItem {
 
     private String resume;
 
-    private List<Vote> votes;
+    private List<Like> likes;
 
     private AddressItem address;
 
@@ -69,12 +69,12 @@ public class TouristPlaceItem {
         this.resume = resume;
     }
 
-    public List<Vote> getVotes() {
-        return votes;
+    public List<Like> getVotes() {
+        return likes;
     }
 
-    public void setVotes(List<Vote> votes) {
-        this.votes = votes;
+    public void setVotes(List<Like> likes) {
+        this.likes = likes;
     }
 
     public AddressItem getAddress() {

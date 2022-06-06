@@ -2,13 +2,14 @@ package com.codegus.codegus.models.restaurant.dto;
 
 import com.codegus.codegus.models.address.dto.AddressDto;
 import com.codegus.codegus.models.phones.Phone;
+import com.codegus.codegus.models.rating.RestaurantRating;
 import com.codegus.codegus.models.socialmedia.SocialMedia;
 import com.codegus.codegus.models.user.User;
 
 import java.util.List;
 import java.util.UUID;
 
-public class RestaunrantDto {
+public class RestaurantDto {
 
     private UUID id;
 
@@ -35,6 +36,8 @@ public class RestaunrantDto {
     private List<Phone> phones;
 
     private List<SocialMedia> socialMedia;
+
+    private List<RestaurantRating> rating;
 
     private AddressDto address;
 
@@ -148,5 +151,13 @@ public class RestaunrantDto {
 
     public void setAddress(AddressDto address) {
         this.address = address;
+    }
+
+    public List<RestaurantRating> getRating() {
+        return rating;
+    }
+
+    public void setRating(List<RestaurantRating> rating) {
+        this.rating = rating;
     }
 }

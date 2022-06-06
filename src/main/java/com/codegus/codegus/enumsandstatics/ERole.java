@@ -1,4 +1,4 @@
-package com.questionsandanswers.questionsandanswers.models.enums;
+package com.codegus.codegus.enumsandstatics;
 
 public enum ERole {
     ROLE_ADMIN,

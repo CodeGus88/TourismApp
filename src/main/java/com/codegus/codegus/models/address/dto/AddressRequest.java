@@ -1,6 +1,10 @@
 package com.codegus.codegus.models.address.dto;
 
+import java.util.UUID;
+
 public class AddressRequest {
+
+    private String branchName;
 
     private String country;
 
@@ -15,6 +19,16 @@ public class AddressRequest {
     private Double latitude;
 
     private Double longitude;
+
+    private UUID foreignKey;
+
+    public String getBranchName() {
+        return branchName;
+    }
+
+    public void setBranchName(String branchName) {
+        this.branchName = branchName;
+    }
 
     public String getCountry() {
         return country;
@@ -70,5 +84,13 @@ public class AddressRequest {
 
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
+    }
+
+    public UUID getForeignKey() {
+        return foreignKey;
+    }
+
+    public void setForeignKey(UUID foreignKey) {
+        this.foreignKey = foreignKey;
     }
 }

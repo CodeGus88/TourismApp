@@ -1,2 +1,14 @@
-package com.codegus.codegus.repositories.apply.phone;public class RestaurantPhoneRepository {
+package com.codegus.codegus.repositories.apply.phone;
+
+import com.codegus.codegus.models.phones.RestaurantPhone;
+import com.codegus.codegus.repositories.BaseRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
+
+@Repository
+public interface RestaurantPhoneRepository extends BaseRepository<RestaurantPhone, UUID> {
+
+
+
 }

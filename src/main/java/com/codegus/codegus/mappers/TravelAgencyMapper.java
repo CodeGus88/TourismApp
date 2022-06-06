@@ -1,21 +1,21 @@
 package com.codegus.codegus.mappers;
-
-import com.codegus.codegus.models.restaurant.Restaurant;
-import com.codegus.codegus.models.restaurant.dto.RestaurantDto;
-import com.codegus.codegus.models.restaurant.dto.RestaurantItem;
-import com.codegus.codegus.models.restaurant.dto.RestaurantRequest;
+import com.codegus.codegus.models.travelagency.TravelAgency;
+import com.codegus.codegus.models.travelagency.dtos.TravelAgencyDto;
+import com.codegus.codegus.models.travelagency.dtos.TravelAgencyItem;
+import com.codegus.codegus.models.travelagency.dtos.TravelAgencyRequest;
+import org.mapstruct.Mapper;
 
 import java.util.List;
 
-public interface RestaurantMapper extends BaseMapper<Restaurant, RestaurantItem, RestaurantDto, RestaurantRequest>{
+@Mapper(componentModel = "spring")
+public interface TravelAgencyMapper extends BaseMapper<TravelAgency, TravelAgencyItem, TravelAgencyDto, TravelAgencyRequest>{
 
     @Override
-    Restaurant requestToEntity(RestaurantRequest request);
+    TravelAgency requestToEntity(TravelAgencyRequest request);
 
     @Override
-    RestaurantDto entityToDto(Restaurant entity);
+    TravelAgencyDto entityToDto(TravelAgency entity);
 
     @Override
-    List<RestaurantItem> entityListToItemList(List<Restaurant> entityList);
-
+    List<TravelAgencyItem> entityListToItemList(List<TravelAgency> entityList);
 }

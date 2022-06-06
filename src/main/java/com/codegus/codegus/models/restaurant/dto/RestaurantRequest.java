@@ -2,6 +2,8 @@ package com.codegus.codegus.models.restaurant.dto;
 
 import com.codegus.codegus.models.address.dto.AddressDto;
 import com.codegus.codegus.models.phones.Phone;
+import com.codegus.codegus.models.phones.RestaurantPhone;
+import com.codegus.codegus.models.socialmedia.RestaurantSocialMedia;
 import com.codegus.codegus.models.socialmedia.SocialMedia;
 import com.codegus.codegus.models.user.User;
 
@@ -29,9 +31,9 @@ public class RestaurantRequest {
 
     private User user;
 
-    private List<Phone> phones;
+    private List<RestaurantPhone> phones;
 
-    private List<SocialMedia> socialMedia;
+    private List<RestaurantSocialMedia> socialMedia;
 
     private AddressDto address;
 
@@ -116,19 +118,19 @@ public class RestaurantRequest {
         this.user = user;
     }
 
-    public List<Phone> getPhones() {
+    public List<RestaurantPhone> getPhones() {
         return phones;
     }
 
-    public void setPhones(List<Phone> phones) {
+    public void setPhones(List<RestaurantPhone> phones) {
         this.phones = phones;
     }
 
-    public List<SocialMedia> getSocialMedia() {
+    public List<RestaurantSocialMedia> getSocialMedia() {
         return socialMedia;
     }
 
-    public void setSocialMedia(List<SocialMedia> socialMedia) {
+    public void setSocialMedia(List<RestaurantSocialMedia> socialMedia) {
         this.socialMedia = socialMedia;
     }
 

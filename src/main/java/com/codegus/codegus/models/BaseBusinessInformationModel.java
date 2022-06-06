@@ -1,11 +1,7 @@
 package com.codegus.codegus.models;
 
-import com.codegus.codegus.models.phones.Phone;
-import com.codegus.codegus.models.socialmedia.SocialMedia;
 import com.codegus.codegus.models.user.User;
-
 import javax.persistence.*;
-import java.util.List;
 
 @MappedSuperclass
 public class BaseBusinessInformationModel<ID> extends BaseCommonModel<ID> {
@@ -22,12 +18,6 @@ public class BaseBusinessInformationModel<ID> extends BaseCommonModel<ID> {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "assistance")
-    private List<Phone> phones;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "assistance")
-    private List<SocialMedia> socialMedia;
 
     public String getEmail() {
         return email;
@@ -61,19 +51,4 @@ public class BaseBusinessInformationModel<ID> extends BaseCommonModel<ID> {
         this.user = user;
     }
 
-    public List<Phone> getPhones() {
-        return phones;
-    }
-
-    public void setPhones(List<Phone> phones) {
-        this.phones = phones;
-    }
-
-    public List<SocialMedia> getSocialMedia() {
-        return socialMedia;
-    }
-
-    public void setSocialMedia(List<SocialMedia> socialMedia) {
-        this.socialMedia = socialMedia;
-    }
 }

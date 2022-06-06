@@ -1,7 +1,8 @@
 package com.codegus.codegus.models.touristplace;
 
 import com.codegus.codegus.models.BaseCommonModel;
-import com.codegus.codegus.models.vote.Vote;
+import com.codegus.codegus.models.address.SimpleAddress;
+import com.codegus.codegus.models.like.Like;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,7 +19,10 @@ public class TouristPlace extends BaseCommonModel<UUID> {
     private String resume;
 
     @OneToMany(mappedBy = "touristPlace", fetch = FetchType.LAZY)
-    private List<Vote> votes;
+    private List<Like> likes;
+
+    @OneToMany(mappedBy = "touristPlace")
+    private List<SimpleAddress> addresses;
 
     public String getCategory() {
         return category;
@@ -36,12 +40,27 @@ public class TouristPlace extends BaseCommonModel<UUID> {
         this.resume = resume;
     }
 
-    public List<Vote> getVotes() {
-        return votes;
+    public List<Like> getVotes() {
+        return likes;
     }
 
-    public void setVotes(List<Vote> votes) {
-        this.votes = votes;
+    public void setVotes(List<Like> likes) {
+        this.likes = likes;
     }
 
+    public List<Like> getLikes() {
+        return likes;
+    }
+
+    public void setLikes(List<Like> likes) {
+        this.likes = likes;
+    }
+
+    public List<SimpleAddress> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<SimpleAddress> addresses) {
+        this.addresses = addresses;
+    }
 }

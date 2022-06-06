@@ -1,4 +1,4 @@
-package com.codegus.codegus.repositories.impl;
+package com.codegus.codegus.repositories.apply;
 
 import com.codegus.codegus.models.assistance.Assistance;
 import com.codegus.codegus.repositories.BaseRepository;

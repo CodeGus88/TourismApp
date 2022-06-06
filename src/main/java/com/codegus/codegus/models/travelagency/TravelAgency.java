@@ -1,7 +1,9 @@
-package com.codegus.codegus.models.travelagence;
+package com.codegus.codegus.models.travelagency;
 
 import com.codegus.codegus.models.BaseBusinessInformationModel;
+import com.codegus.codegus.models.address.TravelAgencyAddress;
 import com.codegus.codegus.models.phones.TravelAgencyPhone;
+import com.codegus.codegus.models.rating.TravelAgencyRating;
 import com.codegus.codegus.models.socialmedia.TravelAgencySocialMedia;
 
 import javax.persistence.Entity;
@@ -22,6 +24,12 @@ public class TravelAgency extends BaseBusinessInformationModel<UUID> {
     @OneToMany(mappedBy = "travelAgency")
     private List<TravelAgencySocialMedia> socialMedias;
 
+    @OneToMany(mappedBy = "travelAgency")
+    private List<TravelAgencyAddress> addresses;
+
+    @OneToMany(mappedBy = "travelAgency")
+    private List<TravelAgencyRating> rating;
+
     public List<TravelAgencyPhone> getPhones() {
         return phones;
     }
@@ -38,4 +46,19 @@ public class TravelAgency extends BaseBusinessInformationModel<UUID> {
         this.socialMedias = socialMedias;
     }
 
+    public List<TravelAgencyAddress> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<TravelAgencyAddress> addresses) {
+        this.addresses = addresses;
+    }
+
+    public List<TravelAgencyRating> getRating() {
+        return rating;
+    }
+
+    public void setRating(List<TravelAgencyRating> rating) {
+        this.rating = rating;
+    }
 }
