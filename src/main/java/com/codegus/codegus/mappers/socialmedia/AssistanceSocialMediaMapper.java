@@ -1,15 +1,14 @@
 package com.codegus.codegus.mappers.socialmedia;
 
 import com.codegus.codegus.mappers.BaseMapper;
-import com.codegus.codegus.models.socialmedia.AssistanceSocialMedia;
-import com.codegus.codegus.models.socialmedia.dto.SocialMediaDto;
-import com.codegus.codegus.models.socialmedia.dto.SocialMediaItem;
-import com.codegus.codegus.models.socialmedia.dto.SocialMediaRequest;
+import com.codegus.codegus.models.apply.socialmedia.AssistanceSocialMedia;
+import com.codegus.codegus.dtos.socialmedia.SocialMediaDto;
+import com.codegus.codegus.dtos.socialmedia.SocialMediaItem;
+import com.codegus.codegus.dtos.socialmedia.SocialMediaRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-import java.util.List;
 
 @Mapper(componentModel = "string")
 public interface AssistanceSocialMediaMapper extends BaseMapper<AssistanceSocialMedia, SocialMediaItem, SocialMediaDto, SocialMediaRequest> {
@@ -26,6 +25,4 @@ public interface AssistanceSocialMediaMapper extends BaseMapper<AssistanceSocial
     })
     SocialMediaDto entityToDto(AssistanceSocialMedia entity);
 
-    @Override
-    List<SocialMediaItem> entityListToItemList(List<AssistanceSocialMedia> entityList);
 }

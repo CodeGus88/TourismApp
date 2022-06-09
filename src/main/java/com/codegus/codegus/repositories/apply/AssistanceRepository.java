@@ -1,6 +1,6 @@
 package com.codegus.codegus.repositories.apply;
 
-import com.codegus.codegus.models.assistance.Assistance;
+import com.codegus.codegus.models.apply.Assistance;
 import com.codegus.codegus.repositories.BaseRepository;
 import org.springframework.stereotype.Repository;
 

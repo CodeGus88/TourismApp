@@ -5,6 +5,8 @@ import com.codegus.codegus.models.BaseModel;
 import com.codegus.codegus.repositories.BaseRepository;
 import com.codegus.codegus.services.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -20,6 +22,12 @@ public class BaseControllerImpl
     @Override
     public ResponseEntity<List<ITEM>> findAll() {
         return ResponseEntity.ok().body(service.findAll());
+    }
+
+    @GetMapping("/paged")
+    @Override
+    public ResponseEntity<Page<ITEM>> findAll(Pageable pageable) {
+        return ResponseEntity.ok().body(service.findAll(pageable));
     }
 
     @GetMapping("{id}")

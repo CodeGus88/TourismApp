@@ -1,12 +1,10 @@
 package com.codegus.codegus.mappers;
 
-import com.codegus.codegus.models.touristplace.TouristPlace;
-import com.codegus.codegus.models.touristplace.dto.TouristPlaceDto;
-import com.codegus.codegus.models.touristplace.dto.TouristPlaceItem;
-import com.codegus.codegus.models.touristplace.dto.TouristPlaceRequest;
+import com.codegus.codegus.models.apply.TouristPlace;
+import com.codegus.codegus.dtos.touristplace.TouristPlaceDto;
+import com.codegus.codegus.dtos.touristplace.TouristPlaceItem;
+import com.codegus.codegus.dtos.touristplace.TouristPlaceRequest;
 import org.mapstruct.Mapper;
-
-import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface TouristPlaceMapper extends BaseMapper<TouristPlace, TouristPlaceItem, TouristPlaceDto, TouristPlaceRequest> {
@@ -16,8 +14,5 @@ public interface TouristPlaceMapper extends BaseMapper<TouristPlace, TouristPlac
 
     @Override
     TouristPlaceDto entityToDto(TouristPlace entity);
-
-    @Override
-    List<TouristPlaceItem> entityListToItemList(List<TouristPlace> entityList);
 
 }

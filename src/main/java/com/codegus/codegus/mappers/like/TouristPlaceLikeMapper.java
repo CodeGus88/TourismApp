@@ -1,15 +1,14 @@
 package com.codegus.codegus.mappers.like;
 
 import com.codegus.codegus.mappers.BaseMapper;
-import com.codegus.codegus.models.like.Like;
-import com.codegus.codegus.models.like.dto.LikeDto;
-import com.codegus.codegus.models.like.dto.LikeItem;
-import com.codegus.codegus.models.like.dto.LikeRequest;
+import com.codegus.codegus.models.apply.Like;
+import com.codegus.codegus.dtos.like.LikeDto;
+import com.codegus.codegus.dtos.like.LikeItem;
+import com.codegus.codegus.dtos.like.LikeRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface TouristPlaceLikeMapper extends BaseMapper<Like, LikeItem, LikeDto, LikeRequest> {
@@ -27,8 +26,5 @@ public interface TouristPlaceLikeMapper extends BaseMapper<Like, LikeItem, LikeD
             @Mapping(source = "user.id", target = "userId")
     })
     LikeDto entityToDto(Like entity);
-
-    @Override
-    List<LikeItem> entityListToItemList(List<Like> entityList);
 
 }

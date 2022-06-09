@@ -1,10 +1,10 @@
 package com.codegus.codegus.controllers.touristplace;
 
 import com.codegus.codegus.controllers.BaseController;
-import com.codegus.codegus.models.touristplace.TouristPlace;
-import com.codegus.codegus.models.touristplace.dto.TouristPlaceDto;
-import com.codegus.codegus.models.touristplace.dto.TouristPlaceItem;
-import com.codegus.codegus.models.touristplace.dto.TouristPlaceRequest;
+import com.codegus.codegus.models.apply.TouristPlace;
+import com.codegus.codegus.dtos.touristplace.TouristPlaceDto;
+import com.codegus.codegus.dtos.touristplace.TouristPlaceItem;
+import com.codegus.codegus.dtos.touristplace.TouristPlaceRequest;
 
 import java.util.UUID;
 

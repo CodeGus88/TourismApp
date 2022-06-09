@@ -1,9 +1,9 @@
 package com.codegus.codegus.mappers;
 
-import com.codegus.codegus.models.user.User;
-import com.codegus.codegus.models.user.dto.UserDto;
-import com.codegus.codegus.models.user.dto.UserItem;
-import com.codegus.codegus.models.user.dto.UserRequest;
+import com.codegus.codegus.models.apply.User;
+import com.codegus.codegus.dtos.user.UserDto;
+import com.codegus.codegus.dtos.user.UserItem;
+import com.codegus.codegus.dtos.user.UserRequest;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

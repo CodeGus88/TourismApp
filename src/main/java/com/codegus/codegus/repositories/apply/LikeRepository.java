@@ -1,6 +1,6 @@
 package com.codegus.codegus.repositories.apply;
 
-import com.codegus.codegus.models.like.Like;
+import com.codegus.codegus.models.apply.Like;
 import com.codegus.codegus.repositories.BaseRepository;
 import org.springframework.stereotype.Repository;
 

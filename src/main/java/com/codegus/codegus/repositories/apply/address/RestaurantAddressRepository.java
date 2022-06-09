@@ -1,6 +1,6 @@
 package com.codegus.codegus.repositories.apply.address;
 
-import com.codegus.codegus.models.address.RestaurantAddress;
+import com.codegus.codegus.models.apply.address.RestaurantAddress;
 import com.codegus.codegus.repositories.BaseRepository;
 import org.springframework.stereotype.Repository;
 import java.util.UUID;

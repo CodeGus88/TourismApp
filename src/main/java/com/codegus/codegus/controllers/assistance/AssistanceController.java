@@ -1,10 +1,10 @@
 package com.codegus.codegus.controllers.assistance;
 
 import com.codegus.codegus.controllers.BaseController;
-import com.codegus.codegus.models.assistance.Assistance;
-import com.codegus.codegus.models.assistance.dto.AssistanceDto;
-import com.codegus.codegus.models.assistance.dto.AssistanceItem;
-import com.codegus.codegus.models.assistance.dto.AssistanceRequest;
+import com.codegus.codegus.models.apply.Assistance;
+import com.codegus.codegus.dtos.assistance.AssistanceDto;
+import com.codegus.codegus.dtos.assistance.AssistanceItem;
+import com.codegus.codegus.dtos.assistance.AssistanceRequest;
 
 import java.util.UUID;
 

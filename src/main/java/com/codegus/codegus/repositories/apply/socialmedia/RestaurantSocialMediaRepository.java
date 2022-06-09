@@ -1,6 +1,6 @@
 package com.codegus.codegus.repositories.apply.socialmedia;
 
-import com.codegus.codegus.models.socialmedia.RestaurantSocialMedia;
+import com.codegus.codegus.models.apply.socialmedia.RestaurantSocialMedia;
 import com.codegus.codegus.repositories.BaseRepository;
 import org.springframework.stereotype.Repository;
 

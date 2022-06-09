@@ -1,6 +1,6 @@
 package com.codegus.codegus.repositories.apply.phone;
 
-import com.codegus.codegus.models.phones.AssistancePhone;
+import com.codegus.codegus.models.apply.phones.AssistancePhone;
 import com.codegus.codegus.repositories.BaseRepository;
 import org.springframework.stereotype.Repository;
 

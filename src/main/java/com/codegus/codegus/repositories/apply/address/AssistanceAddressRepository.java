@@ -1,6 +1,6 @@
 package com.codegus.codegus.repositories.apply.address;
 
-import com.codegus.codegus.models.address.AssistanceAddress;
+import com.codegus.codegus.models.apply.address.AssistanceAddress;
 import com.codegus.codegus.repositories.BaseRepository;
 import org.springframework.stereotype.Repository;
 

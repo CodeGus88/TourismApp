@@ -5,9 +5,13 @@ import com.codegus.codegus.mappers.BaseMapper;
 import com.codegus.codegus.models.BaseModel;
 import com.codegus.codegus.repositories.BaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BaseServiceImpl<E extends BaseModel<ID>, ID, ITEM, DTO, RQ, REP extends BaseRepository<E, ID>, MAP extends BaseMapper<E, ITEM, DTO, RQ>>
         implements BaseService<E, ID, ITEM, DTO, RQ> {
@@ -21,7 +25,18 @@ public class BaseServiceImpl<E extends BaseModel<ID>, ID, ITEM, DTO, RQ, REP ext
     @Override
     @Transactional(readOnly = true)
     public List<ITEM> findAll() {
-        return mapper.entityListToItemList(repository.findAll());
+        List<ITEM> list = repository.findAll()
+                .stream().map(entity -> mapper.entityToItem(entity))
+                .collect(Collectors.toList());
+        Comparator<? super ITEM> comparator = (p0, p1) -> p0.toString().compareTo(p1.toString());
+        list.sort(comparator);
+        return list;
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<ITEM> findAll(Pageable pageable) {
+        return repository.findAll(pageable).map(entity -> mapper.entityToItem(entity));
     }
 
     @Override

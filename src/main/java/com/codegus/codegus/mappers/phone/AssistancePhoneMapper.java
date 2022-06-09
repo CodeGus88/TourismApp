@@ -1,15 +1,14 @@
 package com.codegus.codegus.mappers.phone;
 
 import com.codegus.codegus.mappers.BaseMapper;
-import com.codegus.codegus.models.phones.AssistancePhone;
-import com.codegus.codegus.models.phones.dto.PhoneDto;
-import com.codegus.codegus.models.phones.dto.PhoneItem;
-import com.codegus.codegus.models.phones.dto.PhoneRequest;
+import com.codegus.codegus.models.apply.phones.AssistancePhone;
+import com.codegus.codegus.dtos.phone.PhoneDto;
+import com.codegus.codegus.dtos.phone.PhoneItem;
+import com.codegus.codegus.dtos.phone.PhoneRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface AssistancePhoneMapper extends BaseMapper<AssistancePhone, PhoneItem, PhoneDto, PhoneRequest> {
@@ -25,8 +24,5 @@ public interface AssistancePhoneMapper extends BaseMapper<AssistancePhone, Phone
             @Mapping(source = "assistance.id", target = "foreignKey")
     })
     PhoneDto entityToDto(AssistancePhone entity);
-
-    @Override
-    List<PhoneItem> entityListToItemList(List<AssistancePhone> entityList);
 
 }

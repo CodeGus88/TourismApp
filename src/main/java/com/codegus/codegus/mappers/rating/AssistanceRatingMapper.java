@@ -1,15 +1,14 @@
 package com.codegus.codegus.mappers.rating;
 
 import com.codegus.codegus.mappers.BaseMapper;
-import com.codegus.codegus.models.rating.AssistanceRating;
-import com.codegus.codegus.models.rating.dto.RatingDto;
-import com.codegus.codegus.models.rating.dto.RatingItem;
-import com.codegus.codegus.models.rating.dto.RatingRequest;
+import com.codegus.codegus.models.apply.rating.AssistanceRating;
+import com.codegus.codegus.dtos.rating.RatingDto;
+import com.codegus.codegus.dtos.rating.RatingItem;
+import com.codegus.codegus.dtos.rating.RatingRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface AssistanceRatingMapper extends BaseMapper<AssistanceRating, RatingItem, RatingDto, RatingRequest> {
@@ -26,8 +25,5 @@ public interface AssistanceRatingMapper extends BaseMapper<AssistanceRating, Rat
             @Mapping(source = "assistance.id", target = "foreignKey")
     })
     RatingDto entityToDto(AssistanceRating entity);
-
-    @Override
-    List<RatingItem> entityListToItemList(List<AssistanceRating> entityList);
 
 }

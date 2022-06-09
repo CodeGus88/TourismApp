@@ -1,6 +1,6 @@
 package com.codegus.codegus.models;
 
-import com.codegus.codegus.models.user.User;
+import com.codegus.codegus.models.apply.User;
 import javax.persistence.*;
 
 @MappedSuperclass

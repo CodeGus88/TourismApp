@@ -1,6 +1,5 @@
 package com.codegus.codegus.models;
 
-import com.codegus.codegus.models.address.Address;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -63,5 +62,7 @@ public abstract class BaseCommonModel<ID> extends BaseModel<ID>{
     public void setKeyWords(String keyWords) {
         this.keyWords = keyWords;
     }
+
+
 
 }
