@@ -19,11 +19,11 @@ public class TouristPlaceItem {
 
     private String resume;
 
-    private List<Like> likes;
-
     private AddressItem address;
 
     private LocalDateTime createdAt;
+
+    private Long totalLikes;
 
     public TouristPlaceItem(){
 
@@ -69,14 +69,6 @@ public class TouristPlaceItem {
         this.resume = resume;
     }
 
-    public List<Like> getVotes() {
-        return likes;
-    }
-
-    public void setVotes(List<Like> likes) {
-        this.likes = likes;
-    }
-
     public AddressItem getAddress() {
         return address;
     }
@@ -93,13 +85,20 @@ public class TouristPlaceItem {
         this.createdAt = createdAt;
     }
 
+    public Long getTotalLikes() {
+        return totalLikes;
+    }
+
+    public void setTotalLikes(Long totalLikes) {
+        this.totalLikes = totalLikes;
+    }
+
     @Override
     public String toString() {
         return "TouristPlaceItem{" +
                 "name='" + name + '\'' +
                 ", createdAt=" + createdAt +
                 ", category='" + category + '\'' +
-                ", likes=" + likes +
                 ", address=" + address +
                 '}';
     }

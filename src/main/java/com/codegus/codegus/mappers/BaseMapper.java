@@ -6,6 +6,6 @@ public interface BaseMapper<E, ITEM, DTO, RQ> {
 
     DTO entityToDto(E entity);
 
-    ITEM entityToItem(E Entity);
+    ITEM entityToItem(E entity);
 
 }

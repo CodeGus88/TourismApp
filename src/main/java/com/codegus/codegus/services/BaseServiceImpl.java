@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -42,7 +41,11 @@ public class BaseServiceImpl<E extends BaseModel<ID>, ID, ITEM, DTO, RQ, REP ext
     @Override
     @Transactional(readOnly = true)
     public DTO findById(ID id) {
-        return mapper.entityToDto(repository.findById(id).get());
+        if(existsById(id)){
+            return mapper.entityToDto(repository.findById(id).get());
+        }else{
+            throw new RuntimeException(Messages.getNotFoundMessage(id.toString()));
+        }
     }
 
     @Override
@@ -70,7 +73,7 @@ public class BaseServiceImpl<E extends BaseModel<ID>, ID, ITEM, DTO, RQ, REP ext
                     )
             );
         }else {
-            throw new RuntimeException(Messages.NOT_FOUND.replace("${id}", id.toString()));
+            throw new RuntimeException(Messages.getNotFoundMessage(id.toString()));
         }
     }
 
@@ -81,7 +84,7 @@ public class BaseServiceImpl<E extends BaseModel<ID>, ID, ITEM, DTO, RQ, REP ext
             repository.deleteById(id);
             return true;
         }else{
-            throw new RuntimeException(Messages.NOT_FOUND.replace("${id}", id.toString()));
+            throw new RuntimeException(Messages.getNotFoundMessage(id.toString()));
         }
     }
 
@@ -90,4 +93,5 @@ public class BaseServiceImpl<E extends BaseModel<ID>, ID, ITEM, DTO, RQ, REP ext
     public boolean existsById(ID id) {
         return repository.existsById(id);
     }
+
 }

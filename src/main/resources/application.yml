@@ -12,7 +12,4 @@ spring:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
-#app:
-#  ms:
-#    monolith-api:
-#      uuid: e00f35de-2bf9-4cb0-96a2-a43f16198c35
+

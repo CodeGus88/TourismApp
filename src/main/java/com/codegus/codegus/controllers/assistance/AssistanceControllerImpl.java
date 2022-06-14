@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.UUID;
 
-@RequestMapping("api/assistants")
 @RestController
+@RequestMapping("api/assistants")
 public class AssistanceControllerImpl
         extends BaseControllerImpl<Assistance, UUID, AssistanceItem, AssistanceDto, AssistanceRequest, AssistanceRepository, AssistanceMapper, AssistanceServiceImpl>
         implements BaseController<Assistance, UUID, AssistanceItem, AssistanceDto, AssistanceRequest>{
