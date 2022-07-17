@@ -16,16 +16,16 @@ public class Restaurant extends BaseBusinessInformationModel<UUID> {
 
     //    Implementar las propiedades para restaurante (menu)
 
-    @OneToMany(mappedBy = "restaurant")
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
     private List<RestaurantPhone> phones;
 
-    @OneToMany(mappedBy = "restaurant")
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
     private List<RestaurantSocialMedia> socialMedias;
 
-    @OneToMany(mappedBy = "restaurant")
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.EAGER)
     private List<RestaurantRating> rating;
 
-    @OneToMany(mappedBy = "restaurant")
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
     private List<RestaurantAddress> addresses;
 
     public List<RestaurantPhone> getPhones() {
@@ -67,4 +67,5 @@ public class Restaurant extends BaseBusinessInformationModel<UUID> {
     public void setAddresses(List<RestaurantAddress> addresses) {
         this.addresses = addresses;
     }
+
 }

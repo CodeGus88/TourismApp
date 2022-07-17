@@ -16,11 +16,10 @@ import java.util.UUID;
 @RequestMapping("api/tourist-place")
 @RestController
 public class TouristPlaceControllerImpl
-        extends BaseControllerImpl<TouristPlace, UUID, TouristPlaceItem,
+        extends BaseControllerImpl< TouristPlace, UUID, TouristPlaceItem,
         TouristPlaceDto, TouristPlaceRequest, TouristPlaceRepository, TouristPlaceMapper,
         BaseServiceImpl<TouristPlace, UUID, TouristPlaceItem, TouristPlaceDto, TouristPlaceRequest,
-        TouristPlaceRepository, TouristPlaceMapper>
-        >
+        TouristPlaceRepository, TouristPlaceMapper> >
         implements TouristPlaceController {
 
 

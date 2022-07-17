@@ -6,7 +6,6 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.UUID;
 
-@Data
 @Entity
 @Table(name = "likes")
 public class Like extends BaseModel<UUID> {
@@ -15,7 +14,7 @@ public class Like extends BaseModel<UUID> {
     @JoinColumn(name = "tourist_place_id")
     private TouristPlace touristPlace;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 

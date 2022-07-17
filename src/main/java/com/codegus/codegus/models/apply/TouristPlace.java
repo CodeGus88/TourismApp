@@ -1,8 +1,7 @@
 package com.codegus.codegus.models.apply;
 
 import com.codegus.codegus.models.BaseCommonModel;
-import com.codegus.codegus.models.apply.address.SimpleAddress;
-import com.codegus.codegus.models.apply.Like;
+import com.codegus.codegus.models.apply.address.TouristPlaceAddress;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,11 +17,11 @@ public class TouristPlace extends BaseCommonModel<UUID> {
     @Column(name = "resume")
     private String resume;
 
-    @OneToMany(mappedBy = "touristPlace", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "touristPlace", fetch = FetchType.EAGER)
     private List<Like> likes;
 
     @OneToMany(mappedBy = "touristPlace")
-    private List<SimpleAddress> addresses;
+    private List<TouristPlaceAddress> addresses;
 
     public String getCategory() {
         return category;
@@ -56,11 +55,12 @@ public class TouristPlace extends BaseCommonModel<UUID> {
         this.likes = likes;
     }
 
-    public List<SimpleAddress> getAddresses() {
+    public List<TouristPlaceAddress> getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(List<SimpleAddress> addresses) {
+    public void setAddresses(List<TouristPlaceAddress> addresses) {
         this.addresses = addresses;
     }
+
 }

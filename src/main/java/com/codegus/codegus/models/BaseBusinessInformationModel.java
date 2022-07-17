@@ -15,10 +15,6 @@ public class BaseBusinessInformationModel<ID> extends BaseCommonModel<ID> {
     @Column(name = "service_opening_information")
     private String serviceOpeningInformation;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
-
     public String getEmail() {
         return email;
     }
@@ -41,14 +37,6 @@ public class BaseBusinessInformationModel<ID> extends BaseCommonModel<ID> {
 
     public void setServiceOpeningInformation(String serviceOpeningInformation) {
         this.serviceOpeningInformation = serviceOpeningInformation;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
 }

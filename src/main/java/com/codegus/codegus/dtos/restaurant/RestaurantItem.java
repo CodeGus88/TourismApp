@@ -1,6 +1,8 @@
 package com.codegus.codegus.dtos.restaurant;
 
-import com.codegus.codegus.dtos.address.AddressDto;
+//import com.codegus.codegus.dtos.address.AddressDto;
+import com.codegus.codegus.dtos.address.AddressItem;
+import com.codegus.codegus.dtos.rating.RatingItem;
 import com.codegus.codegus.models.apply.rating.RestaurantRating;
 
 import java.util.List;
@@ -22,9 +24,11 @@ public class RestaurantItem {
 
     private String category;
 
-    private AddressDto address;
+    private String address;
 
-    private List<RestaurantRating> rating;
+    private List<RatingItem> rating;
+
+    private List<AddressItem> addressItems;
 
     public UUID getId() {
         return id;
@@ -82,20 +86,36 @@ public class RestaurantItem {
         this.category = category;
     }
 
-    public AddressDto getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(AddressDto address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    public List<RestaurantRating> getRating() {
+    //    public AddressDto getAddress() {
+//        return address;
+//    }
+//
+//    public void setAddress(AddressDto address) {
+//        this.address = address;
+//    }
+
+    public List<RatingItem> getRating() {
         return rating;
     }
 
-    public void setRating(List<RestaurantRating> rating) {
+    public void setRating(List<RatingItem> rating) {
         this.rating = rating;
+    }
+
+    public List<AddressItem> getAddressItems() {
+        return addressItems;
+    }
+
+    public void setAddressItems(List<AddressItem> addressItems) {
+        this.addressItems = addressItems;
     }
 
     @Override

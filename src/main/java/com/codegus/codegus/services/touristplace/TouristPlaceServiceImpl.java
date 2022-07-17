@@ -15,5 +15,5 @@ public class TouristPlaceServiceImpl extends
         BaseServiceImpl<TouristPlace, UUID, TouristPlaceItem, TouristPlaceDto, TouristPlaceRequest, TouristPlaceRepository, TouristPlaceMapper>
         implements TouristPlaceService
 {
-    // sobreescribir métodos implementados
+
 }

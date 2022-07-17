@@ -16,82 +16,110 @@ public class BaseServiceImpl<E extends BaseModel<ID>, ID, ITEM, DTO, RQ, REP ext
         implements BaseService<E, ID, ITEM, DTO, RQ> {
 
     @Autowired
-    private REP repository;
+    protected REP repository;
 
     @Autowired
-    private MAP mapper;
+    protected MAP mapper;
 
     @Override
     @Transactional(readOnly = true)
     public List<ITEM> findAll() {
-        List<ITEM> list = repository.findAll()
-                .stream().map(entity -> mapper.entityToItem(entity))
-                .collect(Collectors.toList());
-        Comparator<? super ITEM> comparator = (p0, p1) -> p0.toString().compareTo(p1.toString());
-        list.sort(comparator);
-        return list;
+        try{
+            List<ITEM> list = repository.findAll()
+                    .stream().map(entity -> mapper.entityToItem(entity))
+                    .collect(Collectors.toList());
+            Comparator<? super ITEM> comparator = (p0, p1) -> p0.toString().compareTo(p1.toString());
+            list.sort(comparator);
+            return list;
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
+
     }
 
     @Override
     @Transactional(readOnly = true)
     public Page<ITEM> findAll(Pageable pageable) {
-        return repository.findAll(pageable).map(entity -> mapper.entityToItem(entity));
+        try{
+            return repository.findAll(pageable).map(entity -> mapper.entityToItem(entity));
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
     @Override
     @Transactional(readOnly = true)
     public DTO findById(ID id) {
-        if(existsById(id)){
-            return mapper.entityToDto(repository.findById(id).get());
-        }else{
-            throw new RuntimeException(Messages.getNotFoundMessage(id.toString()));
+        try{
+            if(existsById(id)){
+                return mapper.entityToDto(repository.findById(id).get());
+            }else{
+                throw new RuntimeException(Messages.getNotFoundMessage(id.toString()));
+            }
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
         }
     }
 
     @Override
     @Transactional
     public DTO save(RQ request) {
-        return mapper.entityToDto(
-            repository.save(
-                mapper.requestToEntity(
-                        request
-                )
-            )
-        );
+        try{
+            return mapper.entityToDto(
+                    repository.save(
+                            mapper.requestToEntity(
+                                    request
+                            )
+                    )
+            );
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
     @Override
     @Transactional
     public DTO update(ID id, RQ request) {
-        E model;
-        if(existsById(id)){
-            model = mapper.requestToEntity(request);
-            model.setId(id);
-            return mapper.entityToDto(
-                    repository.save(
-                            model
-                    )
-            );
-        }else {
-            throw new RuntimeException(Messages.getNotFoundMessage(id.toString()));
+        try{
+            E model;
+            if(existsById(id)){
+                model = mapper.requestToEntity(request);
+                model.setId(id);
+                return mapper.entityToDto(
+                        repository.save(
+                                model
+                        )
+                );
+            }else {
+                throw new RuntimeException(Messages.getNotFoundMessage(id.toString()));
+            }
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
         }
     }
 
     @Override
     @Transactional
     public boolean delete(ID id) {
-        if(existsById(id)){
-            repository.deleteById(id);
-            return true;
-        }else{
-            throw new RuntimeException(Messages.getNotFoundMessage(id.toString()));
+        try{
+            if(existsById(id)){
+                repository.deleteById(id);
+                return true;
+            }else{
+                throw new RuntimeException(Messages.getNotFoundMessage(id.toString()));
+            }
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
         }
     }
 
     @Override
     @Transactional(readOnly = true)
     public boolean existsById(ID id) {
-        return repository.existsById(id);
+        try{
+            return repository.existsById(id);
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
     }
-
 }

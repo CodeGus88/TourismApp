@@ -9,7 +9,7 @@ import java.util.UUID;
 @Table(name = "restaurant_rating")
 public class RestaurantRating extends BaseRating<UUID>{
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 

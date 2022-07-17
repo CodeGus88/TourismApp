@@ -1,7 +1,6 @@
 package com.codegus.codegus.models.apply;
 
 import com.codegus.codegus.models.BaseModel;
-import com.codegus.codegus.models.apply.Assistance;
 import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
@@ -24,6 +23,15 @@ public class User extends BaseModel<UUID> {
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Assistance> assistants;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Restaurant> restaurants;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<TravelAgency> travelAgencies;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<TouristPlace> touristPlaces;
 
     public String getNickname() {
         return nickname;

@@ -3,11 +3,11 @@ package com.codegus.codegus;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+//import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
 @EnableJpaAuditing // para auditoría, habilita generar automáticamente las fechas
-@EnableWebMvc // para que swagger pueda funcionar
+//@EnableWebMvc // para que swagger pueda funcionar
 public class CodeGusApplication {
 
 	public static void main(String[] args) {

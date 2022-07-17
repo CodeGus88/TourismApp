@@ -1,5 +1,6 @@
 package com.codegus.codegus.dtos.address;
 
+
 public class AddressItem {
 
     private String country;

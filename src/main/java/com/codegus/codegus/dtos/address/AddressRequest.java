@@ -1,25 +1,36 @@
 package com.codegus.codegus.dtos.address;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
 public class AddressRequest {
 
+    @NotNull @NotBlank
     private String branchName;
 
+    @NotNull @NotBlank
     private String country;
 
+    @NotNull @NotBlank
     private String region;
 
+    @NotNull @NotBlank
     private String subregion;
 
+    @NotNull @NotBlank
     private String community;
 
+    @NotNull @NotBlank
     private String address;
 
+    @NotNull
     private Double latitude;
 
+    @NotNull
     private Double longitude;
 
+    @NotNull @NotBlank
     private UUID foreignKey;
 
     public String getBranchName() {

@@ -25,7 +25,7 @@ public class TouristPlaceDto {
 
     private List<Like> likes;
 
-    private AddressDto address;
+    private List<AddressDto> addresses;
 
     private LocalDateTime createdAt;
 
@@ -95,12 +95,20 @@ public class TouristPlaceDto {
         this.likes = likes;
     }
 
-    public AddressDto getAddress() {
-        return address;
+    public List<Like> getLikes() {
+        return likes;
     }
 
-    public void setAddress(AddressDto address) {
-        this.address = address;
+    public void setLikes(List<Like> likes) {
+        this.likes = likes;
+    }
+
+    public List<AddressDto> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<AddressDto> addresses) {
+        this.addresses = addresses;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -118,4 +126,5 @@ public class TouristPlaceDto {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
+
 }

@@ -9,6 +9,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 import java.util.List;
 
 public class BaseControllerImpl
@@ -38,13 +40,13 @@ public class BaseControllerImpl
 
     @PostMapping
     @Override
-    public ResponseEntity<DTO> save(@RequestBody RQ request) {
+    public ResponseEntity<DTO> save(@RequestBody @Valid RQ request) {
         return ResponseEntity.ok().body(service.save(request));
     }
 
     @PutMapping("{id}")
     @Override
-    public ResponseEntity<DTO> update(@PathVariable ID id, @RequestBody RQ request) {
+    public ResponseEntity<DTO> update(@PathVariable ID id, @RequestBody @Valid RQ request) {
         return ResponseEntity.ok().body(service.update(id, request));
     }
 

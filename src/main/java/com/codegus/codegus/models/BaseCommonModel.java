@@ -1,5 +1,6 @@
 package com.codegus.codegus.models;
 
+import com.codegus.codegus.models.apply.User;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -22,6 +23,10 @@ public abstract class BaseCommonModel<ID> extends BaseModel<ID>{
 
     @Column(name = "key_words")
     private String keyWords;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public String getName() {
         return name;
@@ -63,6 +68,11 @@ public abstract class BaseCommonModel<ID> extends BaseModel<ID>{
         this.keyWords = keyWords;
     }
 
+    public User getUser() {
+        return user;
+    }
 
-
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

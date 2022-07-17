@@ -12,7 +12,7 @@ public class RestaurantAddress extends Address<UUID> {
     @Column(name = "branch_name")
     private String branchName; // sucursal
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 

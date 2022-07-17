@@ -1,11 +1,6 @@
 package com.codegus.codegus.dtos.restaurant;
 
-import com.codegus.codegus.dtos.address.AddressDto;
-import com.codegus.codegus.models.apply.phones.RestaurantPhone;
-import com.codegus.codegus.models.apply.socialmedia.RestaurantSocialMedia;
-import com.codegus.codegus.models.apply.User;
-
-import java.util.List;
+import com.codegus.codegus.dtos.user.UserRequest;
 
 public class RestaurantRequest {
 
@@ -27,14 +22,7 @@ public class RestaurantRequest {
 
     private String serviceOpeningInformation;
 
-    private User user;
-
-    private List<RestaurantPhone> phones;
-
-    private List<RestaurantSocialMedia> socialMedia;
-
-    private AddressDto address;
-
+    private UserRequest user;
 
     public String getName() {
         return name;
@@ -108,35 +96,12 @@ public class RestaurantRequest {
         this.serviceOpeningInformation = serviceOpeningInformation;
     }
 
-    public User getUser() {
+    public UserRequest getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserRequest user) {
         this.user = user;
     }
 
-    public List<RestaurantPhone> getPhones() {
-        return phones;
-    }
-
-    public void setPhones(List<RestaurantPhone> phones) {
-        this.phones = phones;
-    }
-
-    public List<RestaurantSocialMedia> getSocialMedia() {
-        return socialMedia;
-    }
-
-    public void setSocialMedia(List<RestaurantSocialMedia> socialMedia) {
-        this.socialMedia = socialMedia;
-    }
-
-    public AddressDto getAddress() {
-        return address;
-    }
-
-    public void setAddress(AddressDto address) {
-        this.address = address;
-    }
 }
